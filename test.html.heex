@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Almosque Home_secren</title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+  </head>
+
+  <body class="overflow-hidden w-screen  h-screen ">
+    <%= if @show_reminder do %>
+      <div class=" w-screen h-screen  bg-green-100">
+        <div class="bg-white  text-black w-screen h-screen space-extra-none secroolbar-none overflow-hidden">
+          <header class=" flex p-4    justify-between  ">
+            <div class="flex gap-x-24 w-1/3  ">
+              <div class="flex items-center">
+                <button phx-click="go_back">
+                  <.icon
+                    name="hero-arrow-left-circle-solid"
+                    class="size-14 font-black bg-[#C28D47] rounded-full"
+                  />
+                </button>
+              </div>
+              <div class="w-56 h-14   content-center">
+                <p class="text-4xl text-center font-bold hover:border-b-4 cursor-pointer ">
+                  SETTINGS
+                </p>
+              </div>
+            </div>
+
+            <div class="flex w-1/2 h-14  bg-[#77B6E2] border rounded-xl border-[#061131] items-center text-center">
+              <div class="w-1/3  h-full content-center text-2xl cursor-pointer ">
+                <button phx-click="mosque_view">
+                  MOSQUE
+                </button>
+              </div>
+              <div class="w-1/3 h-full content-center rounded-lg text-white cursor-pointer  text-2xl bg-[#16529A]">
+                <button phx-click="reminder_view">
+                  REMINDER
+                </button>
+              </div>
+              <div class="w-1/3  h-full content-center text-2xl cursor-pointer">
+                <button phx-click="general_view">
+                  GENERAL
+                </button>
+              </div>
+            </div>
+          </header>
+
+          <div class="flex w-full">
+            <div class="w-1/2 relative left-40 ">
+              <p class=" text-center text-3xl bold text-blue-800">AZAN</p>
+              <div class="flex w-full  ">
+                <div class=" w-10/12">
+                  <div class=" w-full justify-between rounded-3xl  flex flex-col gap-y-4 p-4  bg-[#E4D0A8]  ">
+                    <div class="flex justify-between relative  content-center">
+                      <div class="w-14 h-12 content-center text-xl ">fajAr</div>
+
+                      <select
+                        class=" w-2/3 border border-black  cursor-pointer text-xl  bg-white rounded-xl h-12 items-center"
+                        name="ADHAN "
+                        id="ADHAN"
+                      >
+                        <option value="Omar Hisham Al-Arabi">
+                          Omar Hisham Al-Arabi
+                        </option>
+                        <option value="Abdul Basit Abdus Samad">
+                          Abdul Basit Abdus Samad
+                        </option>
+                        <option value="Madina">Madina</option>
+                        <option value="Mishary Rashid Alafasy">
+                          Mishary Rashid Alafasy
+                        </option>
+                        <option value="Omar Hisham Al-Arabi">
+                          Omar Hisham Al-Arabi
+                        </option>
+                        <option value="No Reminder(Muted)">No Reminder(Muted)</option>
+                      </select>
+                    </div>
+
+                    <div class="flex justify-between  content-center">
+                      <div class="w-14 h-12 content-center text-xl ">Dhuhr</div>
+
+                      <select
+                        class=" w-2/3 border border-black cursor-pointer text-xl  bg-white rounded-xl h-12 items-center"
+                        name="ADHAN "
+                        id="ADHAN"
+                      >
+                        <option value="Abdul Basit Abdus Samad">
+                          Abdul Basit Abdus Samad
+                        </option>
+                        <option value="Omar Hisham Al-Arabi">
+                          Omar Hisham Al-Arabi
+                        </option>
+                        <option value="Madina">Madina</option>
+                        <option value="Mishary Rashid Alafasy">
+                          Mishary Rashid Alafasy
+                        </option>
+                        <option value="Omar Hisham Al-Arabi">
+                          Omar Hisham Al-Arabi
+                        </option>
+                        <option value="No Reminder(Muted)">No Reminder(Muted)</option>
+                      </select>
+                    </div>
+
+                    <div class="flex justify-between content-center">
+                      <div class="w-14 h-12 content-center text-xl ">Asr</div>
+
+                      <select
+                        class=" w-2/3 border border-black cursor-pointer text-xl  bg-white rounded-xl h-12 items-center"
+                        name="ADHAN "
+                        id="ADHAN"
+                      >
+                        <option value="Abdul Basit Abdus Samad">
+                          Abdul Basit Abdus Samad
+                        </option>
+                        <option value="Omar Hisham Al-Arabi">
+                          Omar Hisham Al-Arabi
+                        </option>
+                        <option value="Madina">Madina</option>
+                        <option value="Mishary Rashid Alafasy">
+                          Mishary Rashid Alafasy
+                        </option>
+                        <option value="Omar Hisham Al-Arabi">
+                          Omar Hisham Al-Arabi
+                        </option>
+                        <option value="No Reminder(Muted)">No Reminder(Muted)</option>
+                      </select>
+                    </div>
+
+                    <div class="flex justify-between content-center">
+                      <div class="w-14 h-12 content-center text-xl ">Maghrib</div>
+
+                      <select
+                        class=" w-2/3 border border-black cursor-pointer text-xl  bg-white rounded-xl h-12 items-center"
+                        name="ADHAN "
+                        id="ADHAN"
+                      >
+                        <option value="Abdul Basit Abdus Samad">
+                          Abdul Basit Abdus Samad
+                        </option>
+                        <option value="Omar Hisham Al-Arabi">
+                          Omar Hisham Al-Arabi
+                        </option>
+                        <option value="Madina">Madina</option>
+                        <option value="Mishary Rashid Alafasy">
+                          Mishary Rashid Alafasy
+                        </option>
+                        <option value="Omar Hisham Al-Arabi">
+                          Omar Hisham Al-Arabi
+                        </option>
+                        <option value="No Reminder(Muted)">No Reminder(Muted)</option>
+                      </select>
+                    </div>
+
+                    <div class="flex justify-between  content-center">
+                      <div class="w-14 h-12 content-center text-xl ">Isha</div>
+
+                      <select
+                        class=" w-2/3 border border-black cursor-pointer text-xl  bg-white rounded-xl h-12 items-center"
+                        name="ADHAN "
+                        id="ADHAN"
+                      >
+                        <option value="Madina">Madina</option>
+                        <option value="Omar Hisham Al-Arabi">
+                          Omar Hisham Al-Arabi
+                        </option>
+                        <option value="Abdul Basit Abdus Samad">
+                          Abdul Basit Abdus Samad
+                        </option>
+                        <option value="Mishary Rashid Alafasy">
+                          Mishary Rashid Alafasy
+                        </option>
+                        <option value="Omar Hisham Al-Arabi">
+                          Omar Hisham Al-Arabi
+                        </option>
+                        <option value="No Reminder(Muted)">No Reminder(Muted)</option>
+                      </select>
+                    </div>
+
+                    <div class="flex justify-between   content-center">
+                      <div class="w-14 h-12 content-center text-xl ">Tahajjud</div>
+
+                      <select
+                        class=" w-2/3 border border-black  cursor-pointer text-xl  bg-white rounded-xl h-12 items-center"
+                        name="ADHAN "
+                        id="ADHAN"
+                      >
+                        <option value="No Reminder(Muted)">No Reminder(Muted)</option>
+                        <option value="Omar Hisham Al-Arabi">
+                          Omar Hisham Al-Arabi
+                        </option>
+                        <option value="Abdul Basit Abdus Samad">
+                          Abdul Basit Abdus Samad
+                        </option>
+                        <option value="Madina">Madina</option>
+                        <option value="Mishary Rashid Alafasy">
+                          Mishary Rashid Alafasy
+                        </option>
+                        <option value="Omar Hisham Al-Arabi">
+                          Omar Hisham Al-Arabi
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class=" w-full justify-between relative top-2  flex flex-col gap-y-6  ">
+                    <div class="flex justify-between   content-center">
+                      <div class="w-24 h-12 content-center text-xl ">
+                        Duaa after Adhan
+                      </div>
+
+                      <select
+                        class=" w-2/3 border border-black relitev top cursor-pointer text-xl  bg-white rounded-xl h-12 items-center"
+                        name="ADHAN "
+                        id="ADHAN"
+                      >
+                        <option value="No Reminder(Muted)">No Reminder(Muted)</option>
+                        <option value="Omar Hisham Al-Arabi">
+                          Omar Hisham Al-Arabi
+                        </option>
+                        <option value="Abdul Basit Abdus Samad">
+                          Abdul Basit Abdus Samad
+                        </option>
+                        <option value="Madina">Madina</option>
+                        <option value="Mishary Rashid Alafasy">
+                          Mishary Rashid Alafasy
+                        </option>
+                        <option value="Omar Hisham Al-Arabi">
+                          Omar Hisham Al-Arabi
+                        </option>
+                      </select>
+                    </div>
+                    <div class=" w-full justify-between ">
+                      <div class="flex justify-between relative bottom-2  content-center">
+                        <div class="w-18 h-12 content-center text-xl ">Volume</div>
+                        <div class=" w-2/3 border border-black relitev top cursor-pointer text-xl  rounded-xl mt-5 h-4   items-center">
+                          <div class="w-34 h-4 rounded-xl bg-[#16529A] "></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="w-24 p-4  relative  left-4  flex flex-col gap-y-4">
+                  <div>
+                    <.icon name="hero-play-circle-solid" class="   size-12 text-[#16529A] " />
+                  </div>
+
+                  <div>
+                    <.icon name="hero-play-circle-solid" class="   size-12  text-[#16529A]" />
+                  </div>
+                  <div>
+                    <.icon name="hero-play-circle-solid" class="   size-12 text-[#16529A] " />
+                  </div>
+                  <div>
+                    <.icon name="hero-play-circle-solid" class="   size-12  text-[#16529A]" />
+                  </div>
+                  <div>
+                    <.icon name="hero-play-circle-solid" class="   size-12 text-[#16529A]" />
+                  </div>
+
+                  <div>
+                    <.icon name="hero-play-circle-solid" class="   size-12 text-[#797171]" />
+                  </div>
+                  <div class="mt-3">
+                    <.icon name="hero-play-circle-solid" class="   size-12 text-[#797171] " />
+                  </div>
+                  <div>
+                    <.icon name="hero-speaker-wave-solid bg-[#16529A]" class="   size-12 " />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" w-2/6 relative  left-60 ">
+              <p class="text-center text-3xl text-blue-800 ">
+                Reminder before IQAMA in Minutes
+              </p>
+              <div class="flex flex-col mt-4 gap-y-4">
+                <div class=" relative   justify-around ">
+                  <div class="flex">
+                    <select
+                      class=" w-3/4 border border-black cursor-pointer text-xl   bg-white rounded-xl h-12 items-center"
+                      name="ADHAN "
+                      id="ADHAN"
+                    >
+                      <option value="asfggh">Senan Hafiz</option>
+                    </select>
+                    <div class="w-24 h-12 border border-black rounded-xl relative left-4  items-center  text-center  ">
+                      <p class="text-2xl relative top-2 ">5</p>
+                    </div>
+                  </div>
+                </div>
+                <div class=" relative  justify-around ">
+                  <div class="flex">
+                    <select
+                      class=" w-3/4 border border-black cursor-pointer text-xl   bg-white rounded-xl h-12 items-center"
+                      name="ADHAN "
+                      id="ADHAN"
+                    >
+                      <option value="asfggh">Beep 1</option>
+                    </select>
+                    <div class="w-24 h-12 border border-black rounded-xl relative left-4  items-center  text-center  ">
+                      <p class="text-2xl relative top-2 ">10</p>
+                    </div>
+                  </div>
+                </div>
+                <div class=" relative   justify-around ">
+                  <div class="flex">
+                    <select
+                      class=" w-3/4 border border-black cursor-pointer text-xl   bg-white rounded-xl h-12 items-center"
+                      name="ADHAN "
+                      id="ADHAN"
+                    >
+                      <option value="asfggh">Beep 2</option>
+                    </select>
+                    <div class="w-24 h-12 border border-black rounded-xl relative left-4  items-center  text-center  ">
+                      <p class="text-2xl relative top-2 ">10</p>
+                    </div>
+                  </div>
+                </div>
+                <div class=" relative   justify-around ">
+                  <div class="flex">
+                    <select
+                      class=" w-3/4 border border-black cursor-pointer text-xl   bg-white rounded-xl h-12 items-center"
+                      name="ADHAN "
+                      id="ADHAN"
+                    >
+                      <option value="asfggh">No Reminder(Muted</option>
+                    </select>
+                    <div class="w-24 h-12 border border-black rounded-xl relative left-4  items-center  text-center  ">
+                      <p class="text-2xl relative top-2 ">5</p>
+                    </div>
+                  </div>
+                </div>
+                <div class=" relative  justify-around ">
+                  <div class="flex">
+                    <select
+                      class=" w-3/4 border border-black cursor-pointer text-xl   bg-white rounded-xl h-12 items-center"
+                      name="ADHAN "
+                      id="ADHAN"
+                    >
+                      <option value="asfggh">No Reminder Muted</option>
+                    </select>
+                    <div class="w-24 h-12 border border-black rounded-xl relative left-4  items-center  text-center  ">
+                      <p class="text-2xl relative top-2 ">5</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex justify-between  w-11/12 h-12">
+                  <div class="w-56 ">
+                    <p class="text-xl">Fajr Time</p>
+                    <p class="text-sm">
+                      Full screen reminders such as surch Ak_Kahaf on Fridays.
+                    </p>
+                  </div>
+                  <div class="w-24 h-12 border border-black rounded-xl relative left-6  items-center  text-center  ">
+                    <p class="text-2xl relative top-2 ">ON</p>
+                  </div>
+                </div>
+
+                <div class="flex justify-between mt-2 w-11/12 h-12">
+                  <div class="w-56 ">
+                    <p class="text-xl">Dhikr Reminders</p>
+                    <p class="text-sm ">
+                      Full screen reminders such as surch Ak_Kahaf on Fridays.
+                    </p>
+                  </div>
+                  <div class="w-24 h-12 border border-black rounded-xl relative left-6  items-center  text-center  ">
+                    <p class="text-2xl relative top-2 ">OF</p>
+                  </div>
+                </div>
+
+                <div class="flex justify-between w-11/12 h-12 mt-2">
+                  <div class="w-56 ">
+                    <p class="text-xl">Fajr Time</p>
+                    <p class="text-sm">Adjust Fajar time in min</p>
+                  </div>
+                  <div class="w-24 h-12 border border-black rounded-xl relative left-6  items-center  text-center  ">
+                    <p class="text-2xl relative top-2 ">0</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <%= if @show_mosque do %>
+        <%= if @show_sync do %>
+          <div class="bg-white text-black w-screen h-screen space-extra-none secroolbar-none overflow-hidden">
+            <header class=" flex p-4    justify-between  ">
+              <div class="flex gap-x-24 w-1/3  ">
+                <div class="    items-center     ">
+                  <button phx-click="go_back">
+                    <.icon
+                      name="hero-arrow-left-circle-solid"
+                      class="size-14 font-black bg-[#C28D47] rounded-full"
+                    />
+                  </button>
+                </div>
+                <div class=" h-14 w-68   content-center">
+                  <p class="text-4xl text-center font-bold hover:border-b-4 cursor-pointer ">
+                    SYNC MOSQUE
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex w-1/2 h-14  bg-[#77B6E2] border rounded-xl border-[#061131]  items-center text-center">
+                <div
+                  phx-click="mosque_view"
+                  class="w-1/3  h-full content-center text-2xl text-white cursor-pointer bg-[#16529A] rounded-xl  "
+                >
+                  MOSQUE
+                </div>
+                <div
+                  phx-click="reminder_view"
+                  class="w-1/3 h-full content-center  cursor-pointer  text-2xl "
+                >
+                  REMINDER
+                </div>
+                <div
+                  phx-click="general_view"
+                  class="w-1/3  h-full content-center text-2xl cursor-pointer"
+                >
+                  GENERAL
+                </div>
+              </div>
+            </header>
+            <div class="w-10/12 h-full relative top-6 left-52  ">
+              <div class="w-full h-20 relative   flex justify-between">
+                <div class="h-14 w-1/2 border p-2 border-black rounded-2xl flex  ">
+                  <input
+                    class=" w-5/6 text-2xl cursor-pointer border-hidden hover:border-hidden "
+                    type="text"
+                    placeholder="Enter Your Mosque Name..."
+                  />
+                  <div class=" w-1/5 text-center  ">
+                    <.icon name="hero-magnifying-glass-solid" class="   size-8   font-black" />
+                  </div>
+                </div>
+                <div class="flex  text-3xl h-20 w-5/12 relative top-3  ">
+                  <p class="justify-center w-2/5">Your mosque:</p>
+                  <p class="text-blue-900 justify-center w-3/5">Malden Islamic Center</p>
+                </div>
+              </div>
+              <div class="w-full  relative top-4 text-2xl ">
+                <p>
+                  Only mosques registered with Almosque.app will be displayed here. If you can’t find your mosque here, please
+                  have your mosque administrator contact us at info@almosque.app for free registration.
+                </p>
+              </div>
+              <div class=" flex flex-col gap-y-3 relative top-10 w-1/2  ">
+                <div class="text-3xl">
+                  <p>Nearby Mosques:</p>
+                </div>
+
+                <div class="border border-black rounded-2xl w-2/3 text-white bg-[#E4D0A8]  pl-8 p-2 ">
+                  <p class="text-2xl">Malden Islamic Center</p>
+                  <p class="">405 Pearl street</p>
+                </div>
+
+                <div class="border border-black rounded-2xl w-2/3 text-white bg-neutral-500  pl-8 p-2 ">
+                  <p class="text-2xl">Islamic Cultural Center of Medford</p>
+                  <p class="">43 High street</p>
+                </div>
+
+                <div class="border border-black rounded-2xl w-2/3 text-white bg-neutral-500  pl-8 p-2 ">
+                  <p class="text-2xl">Masjid Ahlus-Sunnah wal-Jama’ah</p>
+                  <p class="">41 Marble street</p>
+                </div>
+
+                <div class="border border-black rounded-2xl w-2/3 text-white bg-neutral-500  pl-8 p-2 ">
+                  <p class="text-2xl">New England Islamic Center</p>
+                  <p class="">23 School street</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% else %>
+          <%= if @show_stand_alone do %>
+            <div class="bg-white text-black w-screen h-screen space-extra-none secroolbar-none overflow-hidden">
+              <header class=" flex p-4    justify-between  ">
+                <div class="flex gap-x-24 w-1/3  ">
+                  <div class="    items-center     ">
+                    <button phx-click="go_back">
+                      <.icon
+                        name="hero-arrow-left-circle-solid"
+                        class="size-14 font-black bg-[#C28D47] rounded-full"
+                      />
+                    </button>
+                  </div>
+                  <div class="w-68 h-14   content-center">
+                    <p class="text-4xl text-center font-bold hover:border-b-4 cursor-pointer ">
+                      STAND-ALONE
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex w-1/2 h-14  bg-[#77B6E2] border rounded-xl border-[#061131]  items-center text-center">
+                  <div
+                    phx-click="mosque_view"
+                    class="w-1/3  h-full content-center text-2xl text-white cursor-pointer bg-[#16529A] rounded-xl  "
+                  >
+                    MOSQUE
+                  </div>
+                  <div
+                    phx-click="reminder_view"
+                    class="w-1/3 h-full content-center  cursor-pointer  text-2xl "
+                  >
+                    REMINDER
+                  </div>
+                  <div
+                    phx-click="general_view"
+                    class="w-1/3  h-full content-center text-2xl cursor-pointer"
+                  >
+                    GENERAL
+                  </div>
+                </div>
+              </header>
+
+              <div class="w-10/12  relative left-20">
+                <div class="w-12/12 relative left-10 h-14  rounded-2xl justify-between border border-black flex">
+                  <div class="  p-3  h-14 text-2xl ">
+                    Malden
+                  </div>
+                  <div class=" text-5xl  p-1 font-extrabold">
+                    <.icon name="hero-magnifying-glass-solid" class="   size-8   font-black" />
+                  </div>
+                </div>
+                <div class="w-full flex justify-between relative left-10 top-20">
+                  <div class=" w-7/12 justify-between rounded-3xl  flex flex-col gap-y-5    ">
+                    <div class="flex justify-between relative  content-center">
+                      <div class=" h-12 content-center text-xl ">Calculation Method</div>
+
+                      <select
+                        class=" w-2/3 border border-black  cursor-pointer text-xl  bg-white rounded-xl h-12 items-center"
+                        name="Asdf "
+                        id="Asdf"
+                      >
+                        <option value="Omar Hisham Al-Arabi">Custom</option>
+                      </select>
+                    </div>
+
+                    <div class="flex justify-between relative  content-center">
+                      <div class=" h-12 content-center text-xl ">Standard</div>
+
+                      <select
+                        class=" w-2/3 border border-black  cursor-pointer text-xl  bg-white rounded-xl h-12 items-center"
+                        name="Asdf "
+                        id="Asdf"
+                      >
+                        <option value="Omar Hisham Al-Arabi">Asr Method</option>
+                      </select>
+                    </div>
+
+                    <div class="flex justify-between relative  content-center">
+                      <div class=" h-12 content-center text-xl ">Higher Latitude Method</div>
+
+                      <select
+                        class=" w-2/3 border border-black  cursor-pointer text-xl  bg-white rounded-xl h-12 items-center"
+                        name="Asdf "
+                        id="Asdf"
+                      >
+                        <option value="Omar Hisham Al-Arabi">No Adjustment</option>
+                      </select>
+                    </div>
+
+                    <div class="flex justify-between relative  content-center">
+                      <div class=" h-12 content-center text-xl ">Hijri offset</div>
+
+                      <select
+                        class=" w-2/3 border border-black  cursor-pointer text-xl  bg-white rounded-xl h-12 items-center"
+                        name="Asdf "
+                        id="Asdf"
+                      >
+                        <option value="Omar Hisham Al-Arabi">0</option>
+                      </select>
+                    </div>
+
+                    <div class="flex justify-between relative  content-center">
+                      <div class=" h-12 content-center text-xl ">TimeZone</div>
+
+                      <select
+                        class=" w-2/3 border border-black  cursor-pointer text-xl  bg-white rounded-xl h-12 items-center"
+                        name="Asdf "
+                        id="Asdf"
+                      >
+                        <option value="Omar Hisham Al-Arabi">America/New_York</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="w-3/12 border rounded-3xl bg-orange-200 text-xl p-2 h-3/4 flex flex-col gap-y-12">
+                    <div class=" h-12 text-xl">
+                      <p>Set custom angles to calculate Fajr and Isha times.</p>
+                    </div>
+                    <div class="flex h-12 justify-between ">
+                      <div class=" flex  items-center ">Fajr Angle</div>
+                      <div class="border border-black p-1 flex justify-center rounded-2xl w-3/5">
+                        <select class="w-full  " name="" id="">
+                          <option value="18.5 degrees">18.5 degrees</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="flex h-12 justify-between ">
+                      <div class="flex items-center">Isha Angle</div>
+                      <div class="border border-black p-1 flex justify-center rounded-2xl w-3/5">
+                        <select class="w-full" name="" id="">
+                          <option value="18.0 degrees">18.0 degrees</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class=" w-full relative  top-30 left-10 flex justify-between">
+                  <div class="flex justify-between relative  left-3/4 w-80">
+                    <div class="w-36 h-20 text-2xl flex font-extrabold rounded-2xl justify-center items-center border  border-black">
+                      <p>Reset</p>
+                    </div>
+                    <div class="w-36 h-20 p-3 bg-blue-950 text-white text-2xl font-extrabold rounded-2xl border border-black flex justify-center items-center">
+                      <p>Save</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% else %>
+            <div class="bg-white  text-black w-screen h-screen space-extra-none secroolbar-none overflow-hidden">
+              <header class=" flex p-4    justify-between  ">
+                <div class="flex gap-x-24 w-1/3  ">
+                  <div class="    items-center     ">
+                    <button phx-click="go_back">
+                      <.icon
+                        name="hero-arrow-left-circle-solid"
+                        class="size-14 font-black bg-[#C28D47] rounded-full"
+                      />
+                    </button>
+                  </div>
+                  <div class="w-56 h-14   content-center">
+                    <p class="text-4xl text-center font-bold hover:border-b-4 cursor-pointer ">
+                      SETTINGS
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex w-1/2 h-14  bg-[#77B6E2] border rounded-xl border-[#061131]  items-center text-center">
+                  <div
+                    phx-click="mosque_view"
+                    class="w-1/3  h-full content-center text-2xl text-white cursor-pointer bg-[#16529A] rounded-xl  "
+                  >
+                    MOSQUE
+                  </div>
+                  <div
+                    phx-click="reminder_view"
+                    class="w-1/3 h-full content-center  cursor-pointer  text-2xl "
+                  >
+                    REMINDER
+                  </div>
+                  <div
+                    phx-click="general_view"
+                    class="w-1/3  h-full content-center text-2xl cursor-pointer"
+                  >
+                    GENERAL
+                  </div>
+                </div>
+              </header>
+
+              <div class="  w-full h-1/3 flex relitive justify-center items-center ">
+                <p class="text-3xl    ">
+                  Do you want to sync your local mosque or use it as stand-alon
+                  device ?
+                </p>
+              </div>
+              <div class="w-full  flex  justify-around ">
+                <div class=" w-4/5 flex relitive text-4xl justify-evenly     ">
+                  <div class="w-1/3  h-24 flex items-center justify-center border border-black  rounded-2xl   ">
+                    <button phx-click="sync_view">Sync With Mosque</button>
+                  </div>
+
+                  <div class="w-1/3 h-24 border bg-[#061131]  text-white border-black rounded-2xl flex items-center justify-center">
+                    <button phx-click="stand_alone_view">Stand-Alone Device</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      <% else %>
+        <%= if @show_general do %>
+          <div class="bg-white text-black w-screen h-screen space-extra-none secroolbar-none overflow-hidden">
+            <header class=" flex p-4    justify-between  ">
+              <div class="flex gap-x-24 w-1/3  ">
+                <button phx-click="go_back">
+                  <.icon
+                    name="hero-arrow-left-circle-solid"
+                    class="size-14 font-black bg-[#C28D47] rounded-full"
+                  />
+                </button>
+                <div class=" h-14   content-center">
+                  <p class="text-4xl text-center font-bold hover:border-b-4 cursor-pointer ">
+                    SETTINGS
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex w-1/2 h-14  bg-[#77B6E2] border rounded-xl border-[#061131]  items-center text-center">
+                <div phx-click="mosque_view" class="w-1/3  h-full content-center text-2xl   ">
+                  MOSQUE
+                </div>
+                <div
+                  phx-click="reminder_view"
+                  class="w-1/3 h-full content-center  cursor-pointer  text-2xl "
+                >
+                  REMINDER
+                </div>
+                <div
+                  phx-click="general_view"
+                  class="w-1/3  h-full content-center text-2xl text-white cursor-pointer bg-[#16529A] rounded-xl cursor-pointer"
+                >
+                  GENERAL
+                </div>
+              </div>
+            </header>
+            <div class="w-full  relative top-4   ">
+              <div class=" w-full h-20 text-6xl text-center  ">
+                PICK YOUR THEME
+              </div>
+              <div class="w-12/12   flex justify-evenly   relative top-4   ">
+                <div class=" w-5/12   border-2  border-blue-800 ">
+                  <img src="/images/c.png" width="730px" height="450px" alt="" />
+                  <div class="text-4xl text-center h-10">Default</div>
+                </div>
+                <div class="  w-5/12   ">
+                  <img src="/images/d.png" width="730px" height="450px" alt="" />
+                  <div class="text-4xl text-center h-10 ">Larger</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% else %>
+          <div class="h-screen w-screen bg-cover bg-center justify-between flex bg-[url('/images/bg.png')] ">
+            <div class="h-screen w-2/5 ">
+              <div class="h-1/4  flex  items-center justify-end">
+                <div class=" w-36 h-36  bg-[#77B6E2] rounded-full  flex justify-center items-center">
+                  <div class=" text-center">
+                    <p class="w-28  text-xl font-bold  ">MAGHRIB</p>
+                    <p class="w-28  text-xl font-bold ">IN</p>
+                    <p class="w-28  text-xl font-bold ">12:12</p>
+                  </div>
+                </div>
+              </div>
+              <div class="h-1/2  flex  items-center">
+                <div class=" w-24 h-24  bg-[#C28D47] right-12 rounded-full relative  flex justify-center items-center">
+                  <div class="text-center left-10   absolute text-black ">
+                    <button phx-click="reminder_view" class=" text-white ">
+                      <.icon name="hero-chevron-right" class="   size-10 " />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="h-1/4   relative ">
+                <div class="h-24   absolute left-8 bottom-4 ">
+                  <div class=" w-16 h-16  bg-[#ffffff] rounded-full flex justify-center items-center">
+                    <img src="/images/icon.png" alt="" />
+                  </div>
+
+                  <p class="text-white ">Malden Islamic Centre</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="h-screen w-2/5">
+              <div>
+                <div class=" flex text-white">
+                  <div class=" flex">
+                    <p class="text-9xl font-bold ">12:45</p>
+                    <p class="text-6xl font-bold pt-14">PM</p>
+                  </div>
+                  <div class="border-l-2 ml-4 pl-4 mb-4 mt-6 ">
+                    <div class="h-10 w-10"><.icon name="hero-cloud" class="   size-10 " /></div>
+                    <p class="text-2xl w-16 h-16">20º F Cloudy</p>
+                  </div>
+                </div>
+                <div class="flex pl-12 gap-7 items-center text-white font-bold text-3xl">
+                  <p>3 JUMADA AL-THANI</p>
+                  <p class="border-l pl-4  ">FRI, DEC 11</p>
+                </div>
+
+                <%= for time <- @data2 do %>
+                  <div class="  w-5/6 ml-8 mt-3 h-12 text-center  text-white text-2xl  flex  rounded-l-xl ">
+                    <p class="flex items-center justify-center  h-full bg-[#1C78B7]  rounded-l-xl w-2/3">
+                      {time.sun}
+                    </p>
+                    <p class="bg-[#C28D47] flex items-center justify-center w-1/3  rounded-r-xl h-full">
+                      {time.time}
+                    </p>
+                  </div>
+                <% end %>
+              </div>
+              <div class="mt-20">
+                <div class="flex text-white justify-end mr-20 mt-6 ">
+                  <div class="  w-4/6  mt-3 h-10 text-center  text-white  flex   ">
+                    <p class="flex items-center justify-center  h-full  w-1/2">ATHAN</p>
+                    <p class=" flex items-center justify-center w-1/2   h-full">IQAMAH</p>
+                  </div>
+                </div>
+
+                <%= for times <- @data  do %>
+                  <div class="w-5/6 ml-8 mt-3 h-10 text-center  text-white text-2xl  flex  rounded-xl ">
+                    <p class="flex items-center justify-center  h-full bg-[#16529A]  rounded-l-xl w-1/3">
+                      {times.name}
+                    </p>
+                    <p class="bg-[#1C78B7] flex items-center justify-center w-1/3   h-full">
+                      {times.time_start}
+                    </p>
+                    <p class="bg-[#77B6E2] flex items-center justify-center w-1/3  rounded-r-xl h-full">
+                      {times.time_end}
+                    </p>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </body>
+</html>
